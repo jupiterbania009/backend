@@ -1,0 +1,20 @@
+services:
+  # Backend Service
+  - type: web
+    name: instafollowx-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://jupiter009:@77861822AaRohanBania009@cluster0.kie5d8x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
+
+  # Frontend Service
+  - type: static_site
+    name: instafollowx-frontend
+    buildCommand: 
+    publish: client/
