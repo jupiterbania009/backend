@@ -3,9 +3,8 @@ services:
   - type: web
     name: instafollowx-backend
     env: node
-    rootDirectory: server
-    buildCommand: npm install
-    startCommand: node server.js
+    buildCommand: cd server && npm install
+    startCommand: cd server && node server.js
     envVars:
       - key: MONGODB_URI
         value: mongodb+srv://jupiter009:@77861822AaRohanBania009@cluster0.kie5d8x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
